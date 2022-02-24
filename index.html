@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>REGISTRATION FORM</h1>
+    <TABLE>
+        <tr>
+            <td><label for="">UserName</label></td>
+            <td><input type="text" id="name"></td>
+        </tr>
+        <tr>
+            <td><label for="">Password</label></td>
+            <td><input type="password" name="" id="pass"></td>
+        </tr>
+        <tr>
+            <td><label for="">Email</label></td>
+            <td><input type="email" name="" id="mail"></td>
+        </tr>
+        <tr>
+            <td><label for="">PhoneNumber</label></td>
+            <td><input type="number" name="" id="number"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="LOGIN" id="btn" onclick="formvalidation()"></td>
+        </tr>
+    </TABLE>
+    <script>
+        let gbtn = document.getElementById("btn");
+        gbtn.addEventListener("click",formvalidation())
+        function formvalidation(){
+        let name = document.getElementById("name");
+        let pass = document.getElementById("pass");
+        let mail = document.getElementById("mail");
+        let number = document.getElementById("number");
+        if(name.value.length<8 || name.vakue.length>30)
+        {
+            alert("Name should not be less than 8 charachters ")
+        }
+        else if(pass.value.length<10 || pass.value.length>30)
+        {
+            alert("password should not be less than 10 charachtes")
+        }
+        else if(!(mail.value.match(/^\w+([/.-]?\w+)*@\w+([/.-]?\w+)*(\. \w {2,3})+$/)))
+        {
+            alert("Please enter valid mail ID")
+        }
+        else if(number.value.length!=10)
+        {
+            alert("Phone Number should contain 10 digits only")
+        }
+        else{
+            document.write("Data Entered SUCCESSFULLY")
+        }
+    }
+    </script>
+</body>
+</html>
